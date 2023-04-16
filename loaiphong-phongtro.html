@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Phòng trọ</title>
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+
+  </script>
+
+  </script>
+
+  <style>
+  .fakeimg {
+      height: 200px;
+      background: #aaa;
+  }
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .dropdown{
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content{
+    display: none;
+    position: absolute;
+     background-color:gray;
+     z-index: 1;
+     list-style-type: 
+  }
+  .dropdown:hover .dropdown-content{
+    display: block;
+  }
+  .dropdown-content a{
+    color: black;
+    padding: 10px 10px;
+    text-decoration: none;
+
+  }
+  .chungcu1 img{
+  display: block;
+  max-width:220px;
+  max-height:130px;
+  width: auto;
+  height: auto;
+  padding: 5px;
+}
+
+button   {
+    display: block; 
+   margin: 4px 4px 4px 4px;
+    height:50px;
+    width:50px;
+    border: none;
+    padding: 5px;
+}
+.container{
+    background-color:white;
+}
+
+body{
+       background-size: cover;}
+.opacity:hover{opacity:0.6}
+ul li {
+
+
+        text-decoration: none;
+        display: block;
+                font-size: 19px;
+        font-weight: bold;
+
+}
+
+footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 50px;
+    
+    background:#B9D3EE ;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+
+footer  .container .noi-dung.about{
+    width:30%;
+    margin-left: 0px;
+}
+footer .container .noi-dung.about h2{
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    }
+footer .container .noi-dung.about h2:before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #f00;
+}
+
+footer .container .noi-dung.about p{
+    color: #999;
+}
+
+
+
+
+
+
+.links h4{
+    position: relative;
+    color:#770000;
+    font-weight: 500;
+    font-size: 26px;
+    margin-bottom: 20px;
+     font-weight: bold;
+}
+
+
+.links h4::before{
+     content: '';
+    
+     bottom: -5px;
+     left: 0;
+     width: 230px;
+     height: 2.5px;
+     background: #550000;
+ }
+.links{
+   
+    width: 30%;
+     font-size: 17px;
+   
+ }
+ 
+ .links ul li a{
+     color: white;
+     
+ }
+.links ul li a:hover{
+     color: #990000;
+ }
+
+
+
+.contact h4{
+    position: relative;
+    color: #770000;
+    font-weight: 500px;
+    margin-bottom: 25px;
+     font-weight: bold;
+  margin-right: 10px;
+    font-size: 26px;
+}
+
+.contact h4::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 210px;
+    height: 2.5px;
+    background: #550000;
+}
+
+.contact{
+    width: calc(35% - 50px);
+    margin-right: 0 !important;
+    margin-right: 10px;
+     font-size: 17px; 
+}
+
+.contact .info{
+    position: relative;
+}
+.contact .info li{
+    display: flex;
+    margin-bottom: 15px;
+}
+.contact .info li span:nth-child(1) {
+    color: #fff;
+    font-size: 28px;
+    margin-right: 15px;
+}
+
+.contact .info li span{
+    color: white;
+     font-size: 17px;
+      line-height: 1;
+
+}
+.contact ul li span:hover{
+     color: #990000;
+ }
+.contact ul li p a:hover{
+     color: #990000;
+ }
+.contact .info li a{
+    color: white;
+    text-decoration: none;
+     margin-bottom: 0px;
+}
+
+
+
+
+@media  (max-width: 700px){
+    footer{
+        padding: 30px;
+        
+    }
+    footer .container{
+        flex-direction: column;
+    }
+    footer .container .noi-dung{
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+    footer .container, .noi-dung.about, .links, .contact{
+        width: 100%;
+    }
+}
+.social-icon{
+    margin-top: 20px;
+    display: flex;
+}
+
+.social-icon li {
+    list-style: none;
+}
+.social-icon li a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #5396e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.social-icon li a:hover{
+    background: gray;
+}
+
+.social-icon li a .fa{
+    color:white;
+    font-size: 20px;
+}
+.congcu {
+    border: 2px solid #FFFFFF;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    background: #EEEEEE;
+}
+
+/*phần tử phủ toàn màn hình*/
+#over {
+    display: none;
+    background: #000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    
+}
+
+.login
+{
+    background-color:#87CEFA;
+    height:auto;
+    width:450px;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:14px;
+    display:none;
+    position:absolute;
+    left:50%;
+    margin-left:-300px;
+}
+    
+.login .login_title
+{
+    color:white;
+    font-size:16px;
+    padding:8px 0 5px 8px;
+    text-align:left;
+}
+
+.login-content label {
+    display: block;
+    padding-bottom: 7px;
+}
+
+.login-content span {
+    display: block;
+}
+.login-content
+{
+    padding-left:35px;
+    background-color:white;
+    margin-left:5px;
+    margin-right:5px;
+    height:auto;
+    padding-top:15px;
+    
+}
+  
+.img-close {
+    float: right;
+    margin-top:-43px;
+    margin-right:5px
+} 
+.button{
+    display: inline-block;
+    color: #444;
+    font-size: 20px;
+
+}
+
+.login input
+{
+    border:1px solid #D5D5D5;
+    border-radius:5px;
+    color:black;
+    height:28px;
+    padding:0px 8px;
+    width:300px;
+}
+.submit-button{
+    display: inline-block;
+    padding: auto;
+    margin: 15px 75px;
+    width: 150px;
+    background: #87CEFA;
+}
+.interface{
+  background: #EEEEEE;
+} 
+  .button{
+    float: center;
+    text-align: center;
+  }
+  b{
+    color: black;
+  }
+  .phongtro{
+     border: 2px solid #FFFFFF;
+    border-radius: 5px;
+    background: #EEEEEE;
+  }
+ .menu li:hover{
+    background-color:  #c8bfe7;
+    color: white;
+  }
+  </style>
+</head>
+<div>
+<body style="background-color:white ">
+<nav style="background-color: #c8bfe7 " class="navbar navbar-expand-lg navbar-light " >
+  <div class="container" style="background-color: #c8bfe7" >
+            <a class="nav-link" href="trangchu1.html"><img src="logo.png"> <span class="sr-only">(current)</span></a>
+         <ul class="social-icon">
+                 <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                 <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                 <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                 <li><a href=""><i class="fa fa-youtube"></i></a></li>
+             </ul>
+      </div>
+  </div>
+</nav>
+<div class="menu">
+<nav style="background-color: #B9D3EE " class="navbar navbar-expand-lg navbar-light  sticky-top" >
+  <div class="container" style="background-color: #B9D3EE" >
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="trangchu1.html"><i class="fa fa-home"></i> TRANG CHỦ <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="loaiphong-phongtro.html">PHÒNG TRỌ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="loaiphong-homestay.html">HOMESTAY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="loaiphong-chungcu.html">CHUNG CƯ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dangbai.html">ĐĂNG BÀI</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="Oghep.html">Ở GHÉP</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" href="gioithieu.html">GIỚI THIỆU</a>
+          </li>  
+       </ul>
+     </div>
+     </div>  <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button style=" height:35px;width:50px;background: white;" class="btn" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <div class="nav-item">
+           
+            &ensp;<a href="#login-box" class="login-window button"><i class="fa fa-user"></i></a>
+        <div id="login-box" class="login">
+            <p class="login_title"> Đăng nhập</p>
+            <a href="#" class="close"><p class="img-close" title="Close Window" alt="Close" />close</p></a>
+            <form method="post" class="login-content" action="#">
+            <label class="username">
+            <span>Tên hoặc email</span>
+            <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
+            </label>
+            <label class="password">
+            <span>Mật khẩu</span>
+            <input id="password" name="password" value="" type="password" placeholder="Password">
+            </label>
+            <button class="button submit-button" type="button">Đăng nhập</button>
+            <p>
+            <a class="forgot" href="#">Quên mật khẩu?</a>
+            </p>        
+            </form>
+        </div>
+         <script type="text/javascript">
+          $(document).ready(function() {
+    $('a.login-window').click(function() {
+
+        //lấy giá trị thuộc tính href - chính là phần tử "#login-box"
+        var loginBox = $(this).attr('href');
+
+        //cho hiện hộp đăng nhập trong 300ms
+        $(loginBox).fadeIn("slow");
+
+        // thêm phần tử id="over" vào sau body
+        $('body').append('<div id="over"></div>');
+        $('#over').fadeIn(300);
+        
+        return false;
+    });
+
+    // khi click đóng hộp thoại
+    $(document).on('click', "a.close, #over", function() { 
+        $('#over, .login').fadeOut(300 , function() {
+            $('#over').remove();  
+        }); 
+        return false;
+    });
+  
+});</script>
+</div>
+      </div>
+  </div>
+</nav>
+</div>
+<div class="container" style="margin-top:30px">
+ <div class="row">
+      <div class="col-sm-8">
+        <table class="interface" style="width: 100%"><br>
+           <ol class="breadcrumb">
+  <li><a href="phongtro.html" style="color: black"><b>Phòng trọ</b> |</a></li>
+                            <li class="active">&ensp; Bài đăng mới nhất</li>
+                        </ol>
+         </div>
+             <tr style="border:1px solid #D3D3D3">
+                 <td>  <a href="" class="chungcu1">
+             <img src="phongtro1.png"></a></td>
+           <td>  <a href="" >
+            <b>PHÒNG ĐẸP CHO THUÊ MT TRƯỜNG CHINH GIÁ RẺ - CÓ GÁC LỬNG THANG MÁY </b>
+            <h5 style="color: gray;">Kích thước:22m²</h5>
+            <h5 style="color: red;">2,5 triệu/tháng</h5></a>
+            <span><i class="fa fa-map-marker"> Hồ Chí Minh</i></span>
+            </td>
+</tr>
+<tr style="border:1px solid #D3D3D3">
+                      <td>  <a href="" class="chungcu1">
+             <img src="phongtro2.png"></a></td>
+           <td>  <a href="" >
+            <b>CHO THUÊ PHÒNG ĐẸP GIÁ TỐT TẠI GÒ VẤP. CÓ HÌNH</b>
+            <h5 style="color: gray;">Kích thước:15m²</h5>
+            <h5 style="color: red;">2,2 triệu/tháng</h5></a>
+            <span><i class="fa fa-map-marker"> Hà Nội</i></span>
+            </td>
+</tr>
+<tr style="border:1px solid #D3D3D3">
+                      <td>  <a href="" class="chungcu1">
+             <img src="phongtro3.png"></a></td>
+           <td>  <a href="" >
+            <b>PHÒNG TRỌ CAO CẤP, ĐẦY ĐỦ NỘI THẤT, ĐẸP NHƯ KHÁCH SẠN, GIỜ GIẤC TỰ DO, KHU BIỆT THỰ SẠNG TRỌNG</b>
+            <h5 style="color: gray;">Kích thước:30m²</h5>
+            <h5 style="color: red;">3 triệu/tháng</h5></a>
+            <span><i class="fa fa-map-marker"> Hồ Chí Minh</i></span>
+            </td>
+</tr>
+<tr style="border:1px solid #D3D3D3">
+                      <td>  <a href="" class="chungcu1">
+             <img src="phongtro4.png"></a></td>
+           <td>  <a href="" >
+            <b>PHÒNG TRỌ MỚI TINH 100% SANG TRỌNG, NỘI THẤT CAO CẤP, CÓ MÁY LẠNH, TỦ ÁO + GÁC LỬNG, BẾP,</b>
+            <h5 style="color: gray;">Kích thước:30m²
+            0-</h5>
+            <h5 style="color: red;">2,6 triệu/tháng</h5></a>
+            <span><i class="fa fa-map-marker"> Đà Nẵng</i></span>
+            </td>
+</tr>
+<tr style="border:1px solid #D3D3D3">
+                      <td>  <a href="" class="chungcu1">
+             <img src="phongtro5.png"></a></td>
+           <td>  <a href="" >
+            <b>CĂN HỘ, PHÒNG TRỌ RẤT RỘNG 50M2 RẤT ĐẸP, MÁY LẠNH, BAN CÔNG, TỦ BẾP, GIỜ TỰ DO....GẦN CHỢ TÂN HƯƠNG</b>
+            <h5 style="color: gray;">Kích thước:50m²</h5>
+            <h5 style="color: red;">3 triệu/tháng</h5></a>
+            <span><i class="fa fa-map-marker"> Hồ Chí Minh</i></span>
+            </td>
+</tr>
+<tr style="border:1px solid #D3D3D3">
+                      <td>  <a href="" class="chungcu1">
+             <img src="phongtro6.png"></a></td>
+           <td>  <a href="" >
+            <b>PHÒNG MỚI XÂY ĐẸP Y HÌNH, CÓ GÁC LỬNG + KỆ BẾP, GIỜ TỰ DO, NGAY LÊ TRỌNG TẤN</b>
+            <h5 style="color: gray;">Kích thước:28m²</h5>
+            <h5 style="color: red;">2,2 triệu/tháng</h5></a>
+            <span><i class="fa fa-map-marker"> Đà Nẵng</i></span>
+            </td>
+</tr>
+<tr style="border:1px solid #D3D3D3">
+                      <td>  <a href="" class="chungcu1">
+             <img src="phongtro7.png"></a></td>
+           <td>  <a href="" >
+            <b>PHÒNG TRỌ RẤT ĐẸP: MÁY LẠNH + TỦ LẠNH, MÁY GIẶT, GÁC LỬNG + BẾP,.....GẦN AEON/b>
+            <h5 style="color: gray;">Kích thước:25m²</h5>
+            <h5 style="color: red;">2,1 triệu/tháng</h5></a>
+            <span><i class="fa fa-map-marker"> Hồ Chí Minh</i></span>
+            </td>
+</tr>
+<tr style="border:1px solid #D3D3D3">
+                      <td>  <a href="" class="chungcu1">
+             <img src="phongtro8.png"></a></td>
+           <td>  <a href="" >
+            <b>PHÒNG TRỌ QUẬN TÂY HỒ 25M² ( TỔNG S SỬ DỤNG = 50M)</b>
+            <h5 style="color: gray;">Kích thước:25m²</h5>
+            <h5 style="color: red;">2,6 triệu/tháng</h5></a>
+            <span><i class="fa fa-map-marker"> Hà Nội</i></span>
+            </td>
+</tr>
+<tr style="border:1px solid #D3D3D3">
+                      <td>  <a href="" class="chungcu1">
+             <img src="phongtro9.png"></a></td>
+           <td>  <a href="" >
+            <b>CHO THUÊ PHÒNG TRỌ Q8, 2TRIỆU5/THÁNG</b>
+            <h5 style="color: gray;">Kích thước:20m²</h5>
+            <h5 style="color: red;">2,5 triệu/tháng</h5></a>
+            <span><i class="fa fa-map-marker"> Hồ Chí Minh</i></span>
+            </td>
+</tr>
+</table>
+ <table class="button">
+
+ <tr class="pagination">
+    <td class="page-item"><button>
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only"></span>
+      </a>
+      </button>
+    </td>
+    <td><button><a href=""><b>1</b></a></button></td>
+    <td><button><a href=""><b>2</b></a></button></td>
+    <td><button><a href="#"><b>3</b></a></button></td>
+    <td><button><a href="#"><b>4</b></a></button></td>
+    <td><button><a href="#"><b>5</b></a></button></td>
+ 
+    <td class="page-item">
+     <button> <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only"></span>
+      </a></button>
+    </td>
+  </tr>
+<tr>
+</table>
+
+      </div>
+      
+      <div class="col-sm-4">
+        <br>
+                        <div style="background: #87CEFA;color: white">
+                        <h5>&ensp;Xem theo giá</h5>
+                     
+                      <tr><div class="congcu">
+                        <p>
+            &ensp;<a href="" style="color: black"> >500.000đ</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="" style="color: black">>1.000.000đ</a></p>
+            <p>
+            &ensp;<a href="" style="color: black"> >1.500.000đ</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="" style="color: black">>2.000.000đ</a></p>
+            <p>
+            &ensp;<a href="" style="color: black"> >2.500.000đ</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="" style="color: black">>3.000.000đ</a></p>
+            <p>
+            &ensp;<a href="" style="color: black"> >3.500.000đ</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="" style="color: black">>4..000.000đ</a></p>
+              <form class="form-inline my-2 my-lg-0">
+                   &ensp;&ensp;&ensp;&ensp;&ensp; <input class="form-control mr-sm-2" type="search" placeholder="Nhập giá mong muốn " aria-label="Search">
+          <button style=" height:35px;width:50px;background: white;" class="btn" type="submit"><i class="fa fa-search"></i></button>
+        </form><br>
+
+           </td></div> </div>
+</tr><br><br>
+ 
+                <div style="background: #87CEFA;color: white">
+                    <h5>&ensp;Xem theo kích thước</h5>
+             
+                  <tr><div class="congcu">
+               <td>
+                     <p>
+            &ensp;<a href="" style="color: black"> Kích thước:>15m²</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="" style="color: black">Kích thước:>20m²</a></p>
+            <p>
+            &ensp;<a href="" style="color: black"> Kích thước:>25m²</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="" style="color: black">Kích thước:>30m²</a></p>
+            <p>
+            &ensp;<a href="" style="color: black"> Kích thước:>35m²</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="" style="color: black">Kích thước:>40m²</a></p>
+            <p>
+            &ensp;<a href="" style="color: black"> Kích thước:>45m²</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="" style="color: black">Kích thước:>50m²</a></p>
+              <form class="form-inline my-2 my-lg-0">
+                   &ensp;&ensp;&ensp;&ensp;&ensp; <input class="form-control mr-sm-2" type="search" placeholder="kích thước mong muốn " aria-label="Search">
+          <button style=" height:35px;width:50px;background: white;" class="btn" type="submit"><i class="fa fa-search"></i></button>
+        </form><br>
+
+           </td></div>    </div>
+</tr><br><br>
+
+                         <div style="background: #87CEFA;color: white">
+                        <h5>&ensp;Xem theo khu vực</h5>
+                        <tr>
+              <div class="congcu">
+                      <td> 
+                         <p>
+            &ensp;<a href="" style="color: black"> Hồ Chí Minh</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="" style="color: black">Hà Nội</a></p>
+            <p>
+            &ensp;<a href="" style="color: black"> Đà Nẵng</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="" style="color: black"> Huế</a></p>
+            <p>
+            &ensp;<a href="" style="color: black"> Nghệ An</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="" style="color: black"> Cà Mau</a></p>
+            <p>
+            &ensp;<a href="" style="color: black"> Hải Phòng</a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="" style="color: black">Quảng Nam</a></p>
+
+           </td></div></div></tr>
+           <tr>
+    <td>
+<a href="#" style="color: black"> <b>&ensp;Xem thêm...</b></a>
+<p>
+</p>
+<td>
+  <img class="img-thumbnail" src="phongtro123.png">
+</td>
+</td>
+</div>
+</tr>
+</td>
+</tr>
+
+</div>
+</tr>
+</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</tr>
+</div>
+<footer>
+
+  <div class="noi-dung about">
+    <br>
+  <img class="img-thumbnail" src="logo.png" >
+</div>&ensp;&ensp;&ensp;&ensp;
+         <div class="noi-dung links">
+            <h4> &ensp;&ensp;&ensp;&ensp;VỀ CHÚNG TÔI</h4>
+             <ul>
+                 <li>
+                 <p>
+                    &ensp;&ensp;&ensp;&ensp;&ensp;<a href="#">- Thành lập ngày 7/8/2017</a>
+                 </p> 
+                  </li>
+                   <li>
+                 <p>
+                    &ensp;&ensp;&ensp;&ensp;&ensp; <a href="#">- Cấp giấy phép kinh doanh số 3432345 </a>
+                 </p> 
+                  </li>
+                   <li>
+                 <p>
+                   &ensp;&ensp;&ensp;&ensp;&ensp;  <a href="#">- Điều khoản sử dụng</a>
+                 </p> 
+                  </li>
+        </ul>
+         </div>
+         <div class="noi-dung contact">
+              <h4>THÔNG TIN LIÊN HỆ</h4>
+             <ul class="info">
+                 <li>
+                     <span><i class="fa fa-map-marker"></i></span>
+                     <span>470 Trần Đại Nghĩa Thành Phố Đà Nẵng Việt Nam</span>
+                 </li>
+                 <li>
+                     <span><i class="fa fa-phone"></i></span>
+                     <p><a href="#">035 290 0135</a>
+                         <br />
+                         <a href="#">012 345 6789</a></p>
+                 </li>
+                 <li>
+                     <span><i class="fa fa-envelope"></i></span>
+                     <p><a href="#">ltqchi.20it5@vku.udn.vn</a><br>
+                      <a href="#">htcua.20it5@vku.udn.vn</a></p>
+                </li>
+             </ul>
+         </div>
+         <div><img class="img-thumbnail" src="qr.png"></div>
+ </footer>
+</body>
+</html>
